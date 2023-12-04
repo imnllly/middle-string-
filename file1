@@ -2,3 +2,10 @@ bool itc_isDigit(unsigned char c) {
     if(c >= '0' && c <= '9') return 1;
     return 0;
 }
+
+unsigned char itc_toUpper(unsigned char c) {
+    if(sym >= 'a' && sym <= 'z') {
+        k = sym - 32;
+    }
+    return k;
+} // доделать
