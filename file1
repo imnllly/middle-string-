@@ -40,4 +40,4 @@ int itc_countWords(string str) {
         if(str[i] == ' ') otv++;
     }
     return otv;
-}
+} // доделать
