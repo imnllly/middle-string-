@@ -9,3 +9,11 @@ unsigned char itc_toUpper(unsigned char c) {
     }
     return k;
 } // доделать
+
+unsigned char itc_changeCase(unsigned char c) {
+    char k;
+    if(c >= 'a' && c <= 'z') k = c - 32;
+    else if(c >= 'A' && c <= 'Z') k = c + 32;
+    else return c;
+    return k;
+}
