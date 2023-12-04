@@ -33,3 +33,11 @@ bool itc_compare(string s1, string s2) {
     }
     else return 0;
 }
+
+int itc_countWords(string str) {
+    int otv = 0;
+    for(int i = 0; i < itc_len(str); i++) {
+        if(str[i] == ' ') otv++;
+    }
+    return otv;
+}
