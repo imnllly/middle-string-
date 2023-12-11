@@ -60,3 +60,65 @@ int itc_countWords(string str) {
         
     }
 }
+
+long long itc_len(string str) {
+	int len = 0;
+	for (int i = 0; str[i] != '\0'; i++) len++;
+	return len;
+}
+
+bool proverka(string str) {
+    for(int i = 0; i < itc_len(str); i++) {
+        if(!(str[i] >= 'A' && str[i] <= 'Z') && !(str[i] >= 'a' && str[i] <= 'z')) { //|| (str[i] >= 'А' && str[i] <= 'Я') || (str[i] >= 'а' && str[i] <= 'я')) {
+            return false;
+        }
+    }
+    return true;
+}
+
+string pol(string str, int pr1, int pr2) {
+    string str_new = "";
+    for(int i = pr1; i < pr2; i++) {
+            if(str[i] != ' ')  {
+        str_new += str[i];
+            }
+    }
+    return str_new;
+}
+
+int itc_countWords(string str) {
+    string s = " " + str + " ";
+    int pr1 = 0, num = 0, pr2;
+    for(int i = 1; i < itc_len(s); i++) {
+        if(s[i] == ' ') {
+            pr2 = i;
+            string s1;
+            s1 = pol(s, pr1, pr2); // написать функцию получения слова
+            if(proverka(s1))
+                num++;
+            pr1 = pr2;
+        }
+    }
+    return num;
+}
+
+string itc_maxCharWord(string str) {
+    string str_new = "";
+    int num = 0, maxi = 0;
+    int i = 0;
+    while(str[i] != ' ') {
+        i++;
+    }
+    if(i == itc_len(str) - 1) return "error";
+    str = " " + str + " ";
+    for(int i = 0; i < itc_len(str); i++) {
+        if((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')) {
+            num++;
+            if(num > maxi) {
+                    maxi = num;
+                    //str_new = pol(str, );
+            }
+        }
+    }
+    return str_new;
+}
