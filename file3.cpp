@@ -18,10 +18,16 @@ bool itc_isFirstInSecond(string s1, string s2) {
 	}
 }
 
+bool proverka3 (char i) {
+    if(!(i >= 'a' && i <= 'z') && !(i >= 'A' && i <= 'Z'))
+        return 1;
+    return 0;
+}
+
 bool proverka2(string str, int k, int i) {
 	if (!(str[i] + k >= 'A' && str[i] + k <= 'Z') && !(str[i] + k >= 'a' && str[i] + k <= 'z'))
 			return 0;
-	else 
+	else
 		return 1;
 }
 
@@ -29,11 +35,17 @@ string itc_Cezar(string str, int k) {
 	string str_new = "";
 	char sym, n;
 	for (int i = 0; i < itc_len(str); i++) {
-        if(str[i] == ' ') sym = ' ';
-		else if (!proverka2(str, k, i))
+        if(proverka3(i)) sym = str[i];
+        else if(!proverka3(i)) {
+		if(!proverka2(str, k, i) && (k < 0))
 			sym = str[i] + (k + 26);
+        else if(!proverka2(str, k ,i) && (k > 0)) {
+            char x = k - ('z' - str[i]) - 1;
+            sym = 'a' + x;
+        }
 		else
 			sym = str[i] + k;
+        }
 		str_new += sym;
 	}
 	return str_new;
