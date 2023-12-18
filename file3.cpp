@@ -35,8 +35,8 @@ string itc_Cezar(string str, int k) {
 	string str_new = "";
 	char sym, n;
 	for (int i = 0; i < itc_len(str); i++) {
-        if(proverka3(i)) sym = str[i];
-        else if(!proverka3(i)) {
+        if(proverka3(str[i])) sym = str[i];
+        else if(!proverka3(str[i])) {
 		if(!proverka2(str, k, i) && (k < 0))
 			sym = str[i] + (k + 26);
         else if(!proverka2(str, k ,i) && (k > 0)) {
