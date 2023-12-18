@@ -17,6 +17,7 @@ char itc_sameChar(string str);
 bool itc_isFirstInSecond(string s1, string s2);
 string itc_Cezar(string str, int k);
 bool proverka2(string str, int k, int i);
+bool proverka3(char i);
 string itc_rmFreeSpace(string str);
 bool itc_isIp(string str);
 
