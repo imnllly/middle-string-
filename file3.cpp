@@ -10,11 +10,11 @@ bool itc_isFirstInSecond(string s1, string s2) {
 	else {
 		s2 = " " + s2 + " ";
 		for (int i = 0; i <= raz; i++) {
-			int sym2 = i + itc_len(s1) + 1;
+			int sym2 = i + itc_len(s1);
 			string st = pol(s2, i, sym2);
 			if (st == s1) return 1;
-			else return 0;
 		}
+		return 0;
 	}
 }
 
