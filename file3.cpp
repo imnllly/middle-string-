@@ -29,14 +29,16 @@ string itc_Cezar(string str, int k) {
 	string str_new = "";
 	char sym, n;
 	for (int i = 0; i < itc_len(str); i++) {
-		if (!proverka2(str, k, i))
+        if(str[i] == ' ') sym = ' ';
+		else if (!proverka2(str, k, i))
 			sym = str[i] + (k + 26);
-		else 
+		else
 			sym = str[i] + k;
 		str_new += sym;
 	}
 	return str_new;
 }
+
 
 string itc_rmFreeSpace(string str) {
 	string str_new = "";
