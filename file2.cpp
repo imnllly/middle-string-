@@ -6,7 +6,7 @@
 bool proverka(string str) {
     for (int i = 0; i < itc_len(str); i++) {
         if (!(str[i] >= 'A' && str[i] <= 'Z') && !(str[i] >= 'a' && str[i] <= 'z')) {
-            if(!(str[i] >= 'À' && str[i] <= 'ß') && (str[i] >= 'à' && str[i] <= 'ÿ'))
+            if(!(str[i] >= 'Ã€' && str[i] <= 'ÃŸ') && !(str[i] >= 'Ã ' && str[i] <= 'Ã¿'))
                 return false;
         }
     }
