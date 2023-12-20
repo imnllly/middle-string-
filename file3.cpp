@@ -53,12 +53,15 @@ string itc_Cezar(string str, int k) {
 
 
 string itc_rmFreeSpace(string str) {
-	string str_new = "";
+	string str_new1 = "", str_new2 = "";
 	for (int i = 0; i < itc_len(str); i++) {
-		str_new += str[i];
+		str_new1 += str[i];
 		while (str[i] == ' ' && str[i + 1] == ' ') i++;
 	}
-	return str_new;
+	for (int i = 1; i < itc_len(str_new1) - 1; i++) {
+        str_new2 += str_new1[i];
+	}
+	return str_new2;
 }
 
 bool itc_isIp(string str) {
