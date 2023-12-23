@@ -20,5 +20,7 @@ bool proverka2(string str, int k, int i);
 bool proverka3(char i);
 string itc_rmFreeSpace(string str);
 bool itc_isIp(string str);
+bool proverka5(string str);
+bool proverka4(string str);
 
 #endif
