@@ -63,21 +63,3 @@ string itc_rmFreeSpace(string str) {
 	}
 	return str_new2;
 }
-
-bool proverka4(string str) {
-    for(int i = 0; i < itc_len(str); i++) {
-        if(!(str[i] >= '0') && !(str[i] <= '9')) return 0;
-    }
-    return 1;
-}
-
-/*bool itc_isIp(string str) {
-	str = ' ' + str + ' ';
-	int tsch1 = 0, tsch2;
-	for(int i = 0; i < itc_len(str); i++) {
-        if(str[i] == '.') {
-            tsch2 = i;
-            string s1 = pol(str, tsch1, tsch2);
-        }
-	}
-} */
