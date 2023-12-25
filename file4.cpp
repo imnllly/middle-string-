@@ -14,8 +14,14 @@ bool proverka5(string str) {
 	if (itc_len(str) > 3) return 0;
 	if (itc_len(str) == 3) {
 		if (str[0] > '2') return 0;
-		else if (str[1] > '5') return 0;
-		else if (str[2] > '5') return 0;
+		else if (str[0] == '2') {
+			if (str[1] > '5') return 0;
+			else if (str[1] == '5') {
+				if (str[2] > '5') return 0;
+				else return 1;
+			}
+			else return 1;
+		}
 	}
 	return 1;
 }
@@ -23,7 +29,7 @@ bool proverka5(string str) {
 bool itc_isIp(string str) {
 	str = ' ' + str + '.';
 	int tsch1 = 0, tsch2, num = 0;
-	bool a = 0;
+	bool a = 1;
 	for (int i = 0; i < itc_len(str); i++) {
 		if (str[i] == '.') num++;
 	}
@@ -39,6 +45,7 @@ bool itc_isIp(string str) {
 				}
 			else a = 0;
 		}
+		if (a == 0) return 0;
 	}
 	return a;
 }
