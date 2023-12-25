@@ -53,6 +53,7 @@ string itc_Cezar(string str, int k) {
 
 
 string itc_rmFreeSpace(string str) {
+	str = ' ' + str + ' ';
 	string str_new1 = "", str_new2 = "";
 	for (int i = 0; i < itc_len(str); i++) {
 		str_new1 += str[i];
